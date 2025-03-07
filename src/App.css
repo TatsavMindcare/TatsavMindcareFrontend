@@ -1,0 +1,379 @@
+.logo {
+  height: 50px;
+}
+body {
+  font-family: Arial, sans-serif;
+}
+/* .navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background: #fff;
+} */
+
+/* .nav-links {
+  list-style: none;
+  display: flex;
+  gap: 15px;
+} */
+
+/* .nav-links a {
+  text-decoration: none;
+  color: #333;
+} */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 30px;
+  background: #ffffff;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.navbar img {
+  height: 50px; /* Adjust logo size */
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li {
+  display: inline;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  font-size: 16px;
+  transition: color 0.3s ease-in-out;
+}
+
+.nav-links a:hover {
+  color: #007bff;
+}
+/* .hero {
+  text-align: center;
+  padding: 50px;
+  background: #f5f5f5;
+} */
+.hero {
+  position: relative;
+  width: 100%;
+  height: 500px; /* Adjust height as needed */
+  background: url("https://via.placeholder.com/1600x800") center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6); /* Dark overlay for better text contrast */
+  backdrop-filter: blur(5px); /* Blurs the background */
+}
+
+.hero-overlay {
+  position: relative;
+  text-align: center;
+  color: white;
+  max-width: 600px;
+  z-index: 1;
+}
+
+.hero h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+}
+
+.hero-btn {
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+  background-color: #ff7f00; /* Orange button */
+  border: 2px solid #ff7f00;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.4s ease-in-out;
+}
+
+.hero-btn:hover {
+  background-color: white;
+  color: #ff7f00;
+  box-shadow: 0px 4px 10px rgba(255, 127, 0, 0.3);
+}
+.about-me {
+  padding: 60px 20px;
+  background-color: #fde8f0; /* Light Pink */
+  display: flex;
+  justify-content: center;
+}
+
+.about-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  max-width: 1100px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+  text-align: left;
+}
+
+.about-image {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.about-image img {
+  width: 400px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+/* 🌟 Hover Effect */
+.about-image:hover img {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.about-text {
+  max-width: 600px;
+}
+
+.about-text h2 {
+  font-size: 2rem;
+  color: #6b2a92;
+  margin-bottom: 10px;
+}
+
+.about-text p {
+  font-size: 1rem;
+  color: #333;
+  line-height: 1.6;
+}
+
+.about-text .highlight {
+  color: #d63384;
+  font-weight: bold;
+}
+
+.read-more {
+  display: inline-block;
+  margin-top: 10px;
+  color: #6b2a92;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease-in-out;
+}
+
+.read-more:hover {
+  color: #a020f0;
+  text-decoration: underline;
+}
+
+/* 📱 Responsive Fix */
+@media (max-width: 768px) {
+  .about-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-text {
+    max-width: 90%;
+  }
+
+  .about-image img {
+    width: 90%;
+  }
+}
+
+.services {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.services-title {
+  font-size: 2rem;
+  color: #6b2a92; /* Purple color */
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.services-title::after {
+  content: "";
+  display: block;
+  width: 100px;
+  height: 3px;
+  background-color: #6b2a92;
+  margin: 10px auto;
+}
+
+.services-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.service-card {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 320px;
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.3s ease-in-out;
+}
+
+.service-card:hover {
+  transform: translateY(-10px);
+}
+
+.service-image {
+  background: #f8d7ff;
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.service-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+.service-title {
+  font-size: 1.5rem;
+  color: #6b2a92;
+  margin-bottom: 10px;
+}
+
+.service-description {
+  font-size: 1rem;
+  color: #333;
+  line-height: 1.5;
+}
+
+/* .btn {
+  padding: 10px 20px;
+  margin: 10px;
+  background: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.services {
+  padding: 50px;
+  background: #fff;
+}
+
+.service-container {
+  display: flex;
+  gap: 20px;
+}
+
+.service-card {
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  text-align: center;
+} */
+
+.contact-section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+.contact-form {
+  background-color: #111;
+  color: white;
+  padding: 50px;
+}
+
+.underline {
+  width: 50px;
+  height: 3px;
+  background-color: red;
+  margin: 10px 0 20px;
+}
+
+.form-control {
+  background-color: #222;
+  color: white;
+  border: 1px solid #444;
+}
+
+.form-control:focus {
+  border-color: red;
+  background-color: #222;
+  color: white;
+}
+
+.contact-info {
+  background-color: white;
+  padding: 50px;
+}
+
+.contact-info h3 {
+  margin-top: 20px;
+  font-weight: bold;
+}
+
+.map-container {
+  width: 420px;
+  height: 463px;
+  margin-top: 20px;
+}
+
+.map-embed {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+}
+/* Change placeholder color for all input fields */
+.form-control::placeholder {
+  color: rgba(255, 255, 255, 0.6); /* Light grayish-white */
+  opacity: 1; /* Ensures it appears in all browsers */
+}
+
+/* Change placeholder color on focus */
+.form-control:focus::placeholder {
+  color: rgba(255, 0, 0, 0.7); /* Light red on focus */
+}
+.footer {
+  text-align: center;
+  padding: 20px;
+  background: #333;
+  color: white;
+}
