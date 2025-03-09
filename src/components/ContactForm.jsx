@@ -38,7 +38,7 @@ const ContactForm = () => {
     }
 
     try {
-      const API_URL ="https://backend-tatsav.vercel.app/"
+      const API_URL ="https://backend-tatsav.vercel.app"
        // import.meta.env.VITE_API_URL || process.env.REACT_APP_API_URL;
       console.log(API_URL, "test");
       const response = await axios.post(
