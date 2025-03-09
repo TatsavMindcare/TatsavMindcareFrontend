@@ -11,19 +11,19 @@ const ServiceSection = () => {
       title: "IQ Testing",
       description:
         "Tatsav clinic offers professional IQ testing to assess your cognitive abilities, including problem-solving, reasoning, and memory. Conducted by licensed Clinical psychologists using standardized tools, IQ testing provides valuable insights into intellectual strengths and areas for improvement.",
-      img: "/images/service1.png",
+      img: "/images/IQ.jpg",
     },
     {
       title: "Career Assesment",
       description:
         "Tatsav clinic provides career assessments to help you discover your strengths, interests, and values, guiding you towards a fulfilling career path. Whether you're exploring new career options or seeking growth in your current role, our assessments offer clarity and support for making informed career decisions.",
-      img: "/images/service1.png",
+      img: "/images/carrerasssesment1.png",
     },
     {
       title: "Psychological Assessments & Testing",
       description:
         "At Tatsav clinic, we offer comprehensive psychological assessments and testing designed to better understand your unique mental and emotional needs. Our clinic offers professional psychological assessments and testing to provide valuable insights into your mental and emotional well-being",
-      img: "/images/service1.png",
+      img: "/images/psychological-tests.png",
     },
     {
       title: "Individual Therapy",
