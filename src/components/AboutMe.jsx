@@ -5,22 +5,16 @@ const AboutMe = () => {
     <section className="about-me">
       <div className="about-container">
         <div className="about-image">
-          <img src="/images/prabh1.jpeg" alt="Pratibha Yadav" />
+          <img src="/images/pratibha.jpg" alt="Pratibha Yadav" />
         </div>
         <div className="about-text">
-          <h2>Hi, I am Pratibha Yadav</h2>
+          <h2>Hi, I am Partibha Yadav</h2>
           <p>
-            An <strong>RCI Registered and Counseling Psychologist, Certified Yoga Practitioner, and Life Coach.</strong> 
-            I am a Certified Trauma Expert and I practice Empathy, Self-Compassion, and provide my clients 
-            with a <span className="highlight">safe space of non-judgment</span>. 
-            I like to deep dive and work with my clients at a personal level to help them 
-            discover their true selves that can help them heal their inner child complex.
+            an <strong>RCI Registered  Clinical Psychologist (A)</strong> 
+            I have completed my Professional Diploma in Clinical Psychology (PDCP) from Amity University, Gurugram. I am a Bronze Medalist as well. 
+            I have an expertise in conducting psychological assessments (IQ assessments, Personality assessments, Career assessments, clinical disorders assessments and etc…) and therapeutic interventions. I am passionate about helping people understand themselves more deeply, develop healthier coping
           </p>
-          <p>
-            My approach is eclectic, where I customize plans for my clients’ concerns and 
-            their needs whilst using techniques from multiple psychological modalities and 
-            Yoga philosophy.
-          </p>
+         
           <a href="#" className="read-more">Read more about me here!</a>
         </div>
       </div>

@@ -1,29 +1,56 @@
 import React, { useState } from "react";
 import axios from "axios";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 const ContactForm = () => {
-  const [formData, setFormData] = useState({ name: "", email: "", message: "" });
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    mobileNo: "",
+    message: "",
+  });
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-//   const handleSubmit = (e) => {
-//     e.preventDefault();
-//     console.log("Form Submitted:", formData);
-//   };
-const handleSubmit = async (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-  
+
+    // Validation for required fields
+    if (!formData.name) {
+      toast.error("Name is required!");
+      document.querySelector("input[name='name']").focus();
+      return;
+    }
+
+    if (!formData.email) {
+      toast.error("Email is required!");
+      document.querySelector("input[name='email']").focus();
+      return;
+    }
+
+    if (!formData.mobileNo) {
+      toast.error("Mobile number is required!");
+      document.querySelector("input[name='mobileNo']").focus();
+      return;
+    }
+
     try {
-      const API_URL = import.meta.env.VITE_API_URL || process.env.REACT_APP_API_URL;
-      console.log(API_URL,"test")
-      const response = await axios.post(`${API_URL}/api/contact/send/`, formData);
-      alert("Message sent successfully!");
-      console.log(response,"response")
-      setFormData({ name: "", email: "", message: "" }); // Reset form
+      const API_URL =
+        import.meta.env.VITE_API_URL || process.env.REACT_APP_API_URL;
+      console.log(API_URL, "test");
+      const response = await axios.post(
+        `${API_URL}/api/contact/send/`,
+        formData
+      );
+      toast.success("Message sent successfully!");
+      console.log(response, "response");
+      setFormData({ name: "", email: "", mobileNo: "", message: "" }); // Reset form
     } catch (error) {
       console.error("Error sending message:", error);
-      alert("Failed to send message!");
+      toast.error("Failed to send message!");
     }
   };
 
@@ -36,6 +63,9 @@ const handleSubmit = async (e) => {
           <div className="underline"></div>
           <form onSubmit={handleSubmit}>
             <div className="mb-3">
+              <label className="ms-2">
+                Name <span style={{ color: "red" }}>*</span>
+              </label>
               <input
                 type="text"
                 name="name"
@@ -47,6 +77,23 @@ const handleSubmit = async (e) => {
               />
             </div>
             <div className="mb-3">
+              <label className="ms-2">
+                Mobile No <span style={{ color: "red" }}>*</span>
+              </label>
+              <input
+                type="text"
+                name="mobileNo"
+                className="form-control"
+                placeholder="Enter your Mobile No"
+                value={formData.mobileNo}
+                onChange={handleChange}
+                required
+              />
+            </div>
+            <div className="mb-3">
+              <label className="ms-2">
+                Email ID <span style={{ color: "red" }}>*</span>
+              </label>
               <input
                 type="email"
                 name="email"
@@ -76,20 +123,20 @@ const handleSubmit = async (e) => {
 
         {/* Right Info Section */}
         <div className="col-md-3 contact-info">
-          <h5 style={{fontWeight:"bold"}}>ADDRESS</h5>
+          <h5 style={{ fontWeight: "bold" }}>ADDRESS</h5>
           <p> D/329 Vivek Vihar, New Delhi, India</p>
 
-          <h5 style={{fontWeight:"bold"}}>CALL US</h5>
+          <h5 style={{ fontWeight: "bold" }}>CALL US</h5>
           <p>+91 9910007764</p>
 
-          <h5 style={{fontWeight:"bold"}}>OPENING HOURS</h5>
-          <p>Monday-Friday: 10 am - 8 pm <br />Saturday, Sunday: Closed</p>
-
-          {/* Google Map */}
-        
+          <h5 style={{ fontWeight: "bold" }}>OPENING HOURS</h5>
+          <p>
+            Monday-Friday: 10 am - 8 pm <br />
+            Saturday, Sunday: Closed
+          </p>
         </div>
         <div className="col-md-3">
-        <div className="map-container">
+          <div className="map-container">
             <iframe
               title="Google Map"
               className="map-embed"
@@ -100,6 +147,8 @@ const handleSubmit = async (e) => {
           </div>
         </div>
       </div>
+
+      {/* ToastContainer for Toastify */}
     </section>
   );
 };
