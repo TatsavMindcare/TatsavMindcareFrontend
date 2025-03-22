@@ -131,7 +131,7 @@ const ContactForm = () => {
           </p>
 
           <h5 style={{ fontWeight: "bold" }}>CALL US</h5>
-          <p>+91 9910007764</p>
+          <p>+91 9810006319</p>
 
           <h5 style={{ fontWeight: "bold" }}>OPENING HOURS</h5>
           <p>

@@ -50,7 +50,7 @@ const ServiceSection = () => {
       >
         {services.map((service, index) => (
           <SwiperSlide key={index}>
-            <div className="service-card">
+            <div className="service-card gap-3">
               <div className="service-image">
                 <img src={service.img} alt={service.title} />
               </div>

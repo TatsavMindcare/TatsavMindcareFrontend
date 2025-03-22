@@ -1,6 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
+import { Menu, X } from "lucide-react";
+import { Link, useLocation } from "react-router-dom";
 
 const Navbar = () => {
+  const [menuOpen, setMenuOpen] = useState(false);
+  const location = useLocation();
+
   return (
     <nav className="navbar">
       <a className="navbar-brand" href="#">
@@ -9,21 +14,62 @@ const Navbar = () => {
           <img src="/images/logomind.png" alt="Logo" className="logo" />
         </div>
       </a>
-      <ul className="nav-links">
+
+      {/* Toggle Button */}
+      <button className="menu-toggle" onClick={() => setMenuOpen(!menuOpen)}>
+        {menuOpen ? <X size={30} /> : <Menu size={30} />}
+      </button>
+
+      {/* Navigation Links */}
+      <ul
+        className={`nav-links ${menuOpen ? "open" : ""}`}
+        onClick={() => setMenuOpen(false)}
+      >
         <li>
-          <a href="#">Home</a>
+          <Link
+            to="/"
+            className={location.pathname === "/" ? "active-link" : ""}
+          >
+            Home
+          </Link>
         </li>
         <li>
-          <a href="#">Psychological Test</a>
+          <Link
+            to="/psychological-test"
+            className={
+              location.pathname === "/psychological-test" ? "active-link" : ""
+            }
+          >
+            Psychological Test
+          </Link>
         </li>
         <li>
-          <a href="#">Counseling Services</a>
+          <Link
+            to="/counseling-services"
+            className={
+              location.pathname === "/counseling-services" ? "active-link" : ""
+            }
+          >
+            Counseling Services
+          </Link>
         </li>
         <li>
-          <a href="#">Contact Us</a>
+          <Link
+            to="/contact"
+            className={location.pathname === "/contact" ? "active-link" : ""}
+          >
+            Contact Us
+          </Link>
         </li>
         <li>
-          <a href="#">Privacy & Policy</a>
+          <Link
+            to="/privacy-policy"
+            className={
+              location.pathname === "/privacy-policy" ? "active-link" : ""
+            }
+          >
+            Privacy & Policy
+          </Link>
         </li>
       </ul>
     </nav>
