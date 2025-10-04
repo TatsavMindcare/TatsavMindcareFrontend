@@ -35,8 +35,14 @@ import ServiceSection from "./components/ServiceSection";
 import ContactForm from "./components/ContactForm";
 import Maintenance from "./components/Maintenance";
 import { ToastContainer } from "react-toastify";
+import PsychologicalTesting from "./components/PsychologicalTesting ";
+import IQAssessment from "./components/IQAssessment";
+import CareerCounseling from "./components/CareerCounseling";
+import IndividualTherapy from "./components/IndividualTherapy";
+import TermsConditions from "./components/TermsPage";
+import PrivacyPolicy from "./components/PrivacyPolicy";
 
-const availablePages = ["/", "/counseling-services", "/contact", "/aboutme"];
+
 
 function App() {
   return (
@@ -46,9 +52,14 @@ function App() {
           <Route index element={<HeroSection />} />
           <Route path="aboutme" element={<AboutMe />} />
           <Route path="counseling-services" element={<ServiceSection />} />
+          <Route path="psychological-test" element={<PsychologicalTesting/>}/>
+          <Route path="iq-assessment" element={<IQAssessment/>}/>
+          <Route path="career-counseling" element={<CareerCounseling/>}/>
+          <Route path="individual-therapy" element={<IndividualTherapy/>}/>
           <Route path="contact" element={<ContactForm />} />
+          <Route path="privacy-policy" element={<PrivacyPolicy/>}/>
+          <Route path="terms-conditions" element={<TermsConditions/>}/>
 
-          {/* Catch all unavailable pages and show Maintenance */}
           <Route path="*" element={<Maintenance />} />
         </Route>
       </Routes>
