@@ -72,7 +72,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom"; // ✅ Add this
-import "./ServiceSection.css";
+import "./serviceSection.css";
 
 const ServiceSection = () => {
   const services = [
@@ -133,7 +133,8 @@ const ServiceSection = () => {
           transition={{ duration: 0.6, delay: 0.2 }}
           viewport={{ once: true }}
         >
-          Explore professional services designed to support your mental health and well-being.
+          Explore professional services designed to support your mental health
+          and well-being.
         </motion.p>
       </div>
 
@@ -216,5 +217,3 @@ const ServiceSection = () => {
 };
 
 export default ServiceSection;
-
-
